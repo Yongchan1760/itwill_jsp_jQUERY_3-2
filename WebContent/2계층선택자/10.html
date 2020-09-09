@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+	<script type="text/javascript" 
+	    	src="https://code.jquery.com/jquery-3.5.1.js"></script>
+	        <!-- code.jquery 사이트 를 접속해서  jquery-3.5.1.js를 불러옴-->
+	        
+	        <!-- 
+	        	제이쿼리 계층 선택자 종류중에 인접한 형제요소 선택자 문법 $("A요소 + 다음에나오는 요소")
+	        	:A요소의 형제 요소중에서 바로 다음에 나오는 인접한 하나의 요소를 선택
+	        	안적어주면 기본 type="text"
+	         -->
+	         <script type="text/javascript">
+	         	$(function(){
+	         		//label요소에 바로 인접한 다음요소인 input요소를 선택
+	         		$("label + input").css("color","blue").val("Labeled!");
+	         		//출력한  텍스트의 값의 색상을 파란핵으로 설정하는 동시에 
+	         		//"Lebeled" 문자열의 해당 input요소의 value속성의 값으로 설정하자.
+	         		/* var value=$("#a").val();
+	         		alert(value); */
+	         	});
+	         	//input요소의 value속성에 값을 설정하기 위해서는 값을 인자로 갖는 val(값) 메소드를 사용
+	         	//그리고 input value="바보" value속성값을 얻을떄는 val()메소드를 사용하면됨
+	         </script>
+</head>
+<body>
+	<form action="">
+		<input type="text" id="a" value="하하하"/>
+		<label>Name :</label>
+		<input  name="name" id="name"/>
+			<fieldset>
+				<label>Newsletter:</label>
+				<input name="Newsletter" id="Newsletter"/>
+			</fieldset>
+			
+	</form>
+	<input name="none"/>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+	<script type="text/javascript" 
+	    	src="https://code.jquery.com/jquery-3.3.1.js"></script>
+	        <!-- 제이쿼리 사이트로 들어가서 js파일을 불러와 현재 html페이지에 로딩시켜사용 -->
+	        
+	     
+	        	<!-- 제이쿼리 계층선택자 종류 중에서...
+	        	자손요소 선택자 문법 $("조상요소 모든후손요소")
+	        	:조상 요소의 모든 후손요소를 선택해서 반환함 -->
+	        
+	        <script type="text/javascript">
+	    	    $(function(){
+	    	    	//form요소의 자손중에서 input 요소를 선택해서 가져와서 border속성의 값 설정
+	    	    	$("form input").css("border", "2px dotted blue");
+	    	    	/* form 요소의 자손중에서 필드셋 요소를 선택하고
+	    	    	필드셋 요소(조상요소)를 기준으로 자손중에서 <input> 요소를 최종선택해 
+	    	    	background-color 속성의 값을 설정 */
+	    	    	$("form fieldset input").css("background-color","yellow");
+	    	    });
+	        </script>
+	       
+</head>
+<body>
+	<form >
+		<div>기본  form</div>
+		<label>기본 form요소의 자식</label>
+		<input name="name" id="name"/>
+			<fieldset>
+				<label>기본 form요소의 자손, 필드셋 요소의 자식</label>
+				<input name="newsletter" id="newsletter"/>
+			</fieldset>
+	</form>
+	기본 form요소의 형제요소: <input name="none"/>
+</body>
+</html>

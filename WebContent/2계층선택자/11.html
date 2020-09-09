@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+	<script type="text/javascript" 
+	    	src="https://code.jquery.com/jquery-3.5.1.js"></script>
+	        <!-- code.jquery 사이트 를 접속해서  jquery-3.5.1.js를 불러옴-->
+	       
+	       <!--
+	       	제이쿼리 계층 선택자 종류
+	       	다중 형제 선택자  $("prev ~ siblings")
+	       	:prev 요소 바로 다음에 나오는 모든 형제 (siblings) 요소를 선택해옴
+			
+			예제주제:
+			id속성값이 "prev 인 태그 다음에 나오는 모든 형제 태그를 선택해 border 속성값으로 스타일 적용
+				       
+	         -->
+	         
+	         <script type="text/javascript">
+	      		//박스를 디브요소
+	      		$(function(){
+	      			$("#prev ~ div").css("border","3px groove blue")
+	      			/* id속성값이 prev인 span태그 다음에 나오는 형제 태그들 중에서 
+	      			 div요소들만 선택해서 border속성의 값을 설정하자
+	      			따라서 <div>div 아이템2</div>
+	      			<div>div 아이템3 		<div id="small">중첩 div 아이템 </div> 		</div>
+	      			<div>div 아이템4</div> 태그들은 선택되지만....
+	      			<span id="prev">span 아이템2</span>태그는 선택되지 않아 스타일이 적용되지 않는다. */
+	      			
+	      		});
+	       	 </script>
+	       <style type="text/css">
+	       		div,span{
+	       			/* 	디브를 모두 선택해오고,또 span을 선택해와 */
+	       			width: 80px;
+	       			height: 80px;
+	       			background: #bfa;
+	       			margin: 5px;
+	    			float: left;
+	    			font-size:14px;
+	    			display: block;
+	       		}	       
+	       		div#small{
+	       			width: 60px;
+	       			 height: 25px;
+	       			background: #fab;
+	       			font-size:12px;
+	       			 margin: 5px;
+	    			float: left;
+	    			display: block;  
+	       		}
+	       </style>
+</head>
+<body>
+	<div>div 아이템1</div>
+	<span id="prev">span 아이템1</span>
+	<div>div 아이템2</div>
+	<div>div 아이템3 	<div id="small">중첩 div 아이템 </div>  </div>
+	<span id="prev">span 아이템2</span>
+	<div>div 아이템4</div>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+	<script type="text/javascript" 
+	    	src="https://code.jquery.com/jquery-3.3.1.js"></script>
+	        <!-- 제이쿼리 사이트로 들어가서 js파일을 불러와 현재 html페이지에 로딩시켜사용 -->
+	    
+	        	<!-- 제이쿼리 계층 선택자 종류중에서..
+	        	자식 요소 선택자  $("parent > child")
+	        	: html 문서를을 탐색하여 부모 parent요소의 모든 자식 child 요소를 선택해서 가져오자
+	          	-->
+	        	
+	        	<script type="text/javascript">
+	        		$(function(){
+	        			//class속성값이 topnav인 ul요소의 모든 자식 요소를 선택하여 border
+	        			//속성값을 설정 자식만 선택이되고 자세히보면 자손은 선택이안됨
+	        			$(".topnav > li").css("border","3px double red");
+	        			//배열에 담아서 가져온다 마찬가지
+	        			console.log($(".topnav > li").length);//배열에 저장된 길이를 확인해본다.
+	        			//콘솔창에 자식요소 li요소의 개수를 출력한다.
+	        			//중첩된 li요소는 자손요소로 선택되지 않는다. 그러므로 결과는 3이 출력된다.
+	        		});
+	        	</script>
+</head>
+<body>
+	<ul Class="topnav">
+		<li>아이템1</li>
+		<li>아이템2
+			<ul>
+			 	<li>중첩된 아이템1</li>
+			 	<li>중첩된 아이템2</li>
+			 	<li>중첩된 아이템3</li>
+			</ul>
+		</li>
+		<li>아이템3</li>
+	</ul>
+</body>
+</html>

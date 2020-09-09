@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+	<!-- 
+		 Jquery 기본선택자 종류 중에서.... 태그명선택자 -> $("태그명")
+		 : HTML DOM을 탐색하여 지정된 태그명과 일치하는 모든 요소를 검색하여 배열에 담아서 반환한다.
+	 -->
+
+	<!-- Jquery사용을위한 CDN링크 주소 작성  : JQUERY설치-->
+	<script type="text/javascript" 
+	        src="https://code.jquery.com/jquery-3.3.1.js"></script>
+
+	<script type="text/javascript">
+	
+// 		$(document).ready(function(){
+			
+// 		});	
+		//웹브라우저가 3.html파일의 HTML코드를 모두 로딩했을때 function(){}이벤트 처리함수 실행
+		$(function(){
+			
+			$("div").css("color","red");
+			
+			console.log("첫번째 div요소의 텍스트값 얻어 출력 : " + $("div")[0].innerHTML);
+			console.log("두번째 div요소를 얻어 출력 :" + $("div")[1] );
+			
+			$("span").css("color","blue");
+					
+		});
+	</script>
+</head>
+<body>
+		<div>DIV1</div>
+		<div>DIV2</div>
+		<span>SPAN</span>
+</body>
+</html>
+	
+
+
