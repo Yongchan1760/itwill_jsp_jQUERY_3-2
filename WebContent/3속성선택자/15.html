@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+	<script type="text/javascript" 
+	    	src="https://code.jquery.com/jquery-3.5.1.js">
+	</script>
+		
+	<!-- 
+		제이쿼리 속성 선택자 종류
+		attribute contains 선택자
+		-> 지정된 속성의 값이 정확하게 일치하지 않지만 지정된값을 포함하는 요소를 선택 
+		-> 공백으로 정확하게 구분된 속성값을 갖는 요소를 선택하는 선택자
+		
+		사용법
+		$("selector[속성명 *='속성값']")
+		// 정확하게 일치하지는 않지만 지정된 속성값 일부를 포함하는 요소 선택 *=
+	
+		$("selector[속성명 ~='속성값']")
+		// 공백으로 정확하게 구분된 요소를 선택 ~=연산자를 사용함 
+		
+		예제 주제)
+		input 태그의 name 속성값과 정확하게 일치하지는 않지만 "man"이 포함된 요소를 선택해서
+		 "man" 글자 포함이라는 문자열을 input 요소에 설정하고, 
+		 공백으로 정확하게 구분된 요소를 선택해서 border 스타일을 적용하는 예제
+	 -->
+	 <script type="text/javascript">
+		 $(function(){
+			 $("input[name *= 'man']").val("man 글자포함");
+			 //input태그 중에서 name속성의 값이 문자열 man이 포함된 요소를 선택 해서 가져온다 
+			 // 따라서 <input name="newmilk">를 제외한 나머지 input 태그가 선택된다
+			 // 선택한 input태그들의 value 속성값들은  man 글자포함으로 설정함
+			 // input 태그 중에서 name속성의 값에 빈공백 구분자를 가진 문자열 man이 포함된 요소를 선택
+			 $("input[name ~= 'man']").css("border","3px solid red");
+			 console.log($("input[name *= 'man']"));
+			 var v=$("*");
+			 console.log(v);
+		 });
+	 
+	 
+	 //자동입력 안되는경우 자동완성기능을 설치하자  plug_in,  help-> eclips 마켓
+	 </script>
+	
+</head>
+<body>
+	<input name="man-news" value="man" >
+	<!-- <input name="man-news" value="man" > 위에 꺼와 동일 -->
+	<input name="milk man">
+	<input name="letterman2">
+	<input name="newmilk">
+	<input name="superman">
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+	<script type="text/javascript" 
+	    	src="https://code.jquery.com/jquery-3.5.1.js">
+	</script>
+	<!-- 
+		제이쿼리 필터 선택자  란?
+		- 펄터 선택자는 다양한 방식으로 원하는 요소를 걸러내는 역할을 하며
+		:콜론 기호를 사용한다. 가져온 배열값을 걸러내자 이말
+		
+		 :animated 필터 선택자 
+		 - html 코드 내에 현재 애니메이션 동작을 하는 요소만 ? 선택해옴
+		  만약 내가 이클립스 창의 탭을 움직이면 그것도 가져온다.
+		
+		주제: 버튼을 클릭하면 HTML DOM에서 애니메이션으로 동작하는 DIV요소 영역을 선택해서
+		div 요소의 너비 width를 70px에서 40px로 축소시키는 예제.
+	
+		제이쿼리로 게임을 만들수있다.
+	 -->
+	
+	 <style type="text/css">
+	 	/* 
+	 		html문서내에 존재하는 모든 div요소를 배열에 담아서 선택해서 width너비를 
+	 		70px, 배경색을 red로 설정하는 스타일을 정의한다.
+	 	 */
+	 	 
+	 	 div{
+	 	 	background: red;
+	 	 	width: 70px;
+	 	 	height: 70px;
+			margin: 0 3px;
+			/* margin: 0 3px;  위아래, 왼쪽 오른쪽 여백을 말한다 */
+			float: left;
+			/* float: left;  첫번째 div요소를 기준으로 왼쪽 정렬*/
+	 	 }
+	 	 
+	 	 .toggleWidth{/* class속성값이 toggleWidth인 */
+	 		 width: 40px;
+	 	 	
+	 	  	
+	 	 }
+	 
+	 </style>
+	 
+	 <script type="text/javascript">
+	 	$(function(){
+	 		
+	 		//$("#ani").slideToggle("slow", animateIt);// animateIt 호출할 함수를 적는다.
+			//id속성값이 run인 버튼을 선택해서 클릭했을떄
+			// 
+	 			$("#run").click(function(){
+	 				// 현재 애니메이션으로 동작하는 요소를 선택해서 가져와서
+	 				// toggleWidth css 스타일을 적용한다.
+	 				$(":animated").toggleClass("toggleWidth");
+	 				
+	 			});//클릭하는 행위를 했을때 함수가 시작되도록
+	 		//click();이벤트를 이용해서 이벤트를 등록한다
+	 		
+	 		function animateIt(){//2...재귀함수 호출
+	 			/* 시각적인 효과를 보여주기 위한 메소드:
+	 				slideToggle()메소드는 요소를 보이게 또는 안보이게 시각적 효과를 내는 메소드이다.
+	 				이 메소드는 요소의 height값을 조작하여 애니메이션 효과를 내며, 보이면 
+	 				다시 안보이게하고 안보이면 다시 보이게 동작하는 시각적 효과를 주는 메소드이다. 
+	 				slideToggle(시간값 설정, 자동으로 호출되는 콜백 함수명)*/
+	 				
+	 				$("#ani").slideToggle("slow ", animateIt)//3...
+	 				//$("#ani").slideToggle("fast, slow , normal ") 세개중에 선택가능
+	 				//1초는 1000
+
+	 		}
+	 		animateIt();//1...
+	 	});
+	 	
+	 </script>
+	 
+</head>
+<body>
+		<button id="run">Run</button>
+		<div></div>
+		<div id="ani" ></div>
+		<!-- <div id="ani" class=toggleWidth></div> -->
+		<div ></div>
+		<!-- 
+			 실행 순서를 이렇게하자 )
+			1. run버튼을 클릭하기전에 3개의 div태그중 가운데 div태그가 slideToggle() 애니메이션으로
+			상/하 반복해서 자동으로 동작 한다.
+			3개의 div태그의 width값은 70px로 동일하다.
+			
+			2. run 버튼을 클릭했을떄 현재 애니메이션으로 동작하고있는 두번쨰 div태그의 너비값을 
+			40px로 설정해 작아지게 만들자
+			
+			3. 다시한번 run 버튼을 클릭하면 div태그의 너비값이 워래의 크기인 70px로 토글된다.
+		 -->
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+	<script type="text/javascript" 
+	    	src="https://code.jquery.com/jquery-3.5.1.js">
+	</script>
+	        <!-- code.jquery 사이트 를 접속해서  jquery-3.5.1.js를 불러.옴 -->
+	        
+	        <!-- 
+				 제이쿼리에서 속성 선택자 종류
+				 attribute equals 선택자란?
+				 : html dom에서 속성이름과 속성값 이용해서 원하는 요소를 선택하는 선택자 
+				 :속성 이름과 속성값을 같이 지정하는 경우 "[속성명=값]" 또는 [속성명!=값] 라는 표현식 사용       
+		        
+		        사용법
+		         $("selector[attr='value']")
+	          $("selector[attr!='value']")
+	         		 ->html 요소중에서 속성이름이(attr)이 지정된 value가 정확하게 일치하는 요소를 선택하는 경우
+	         		 	=연산자를 사용
+	          		->일치하지 않는 요소를 선택하는 경우 
+	         			 !=연산자를 사용
+	            $("div[id!='a']")//a가 아닌 div 요소들을 몽땅가져온다
+	          $("h1[id='a']")// h1태그들 중에서 id가 a인 요소를 선택해올수있다.
+	         -->
+	        
+	 		 <!-- <a href="http://naver.com">one</a> <br>
+					//보안 인증 없는 사이트
+				<a href="https://naver.com">two</a>
+					//인증된 보안 접속 --> 
+	       
+
+</head>
+<body>
+	<a href="http://naver.com">one</a>	<br>
+	<a href="https://naver.com" target="_blank">two</a>	<br>
+	<a href="https://daum.net" >three</a>	<br>
+	<a href="https://daum.net" target="_blank">four</a>	<br>
+	<a href="https://korea.com" >five</a>	<br>
+	<a href="https://daum.net" target="_blank">six</a>	<br>
+	
+			<script type="text/javascript">
+	       		//펑션안써도 여기서는 읽을수있어서
+	       		//a요소에서 href 속성값이 https://naver.com과 정확하게 일치하는 요소를 선택하여
+	       		// 글자크기를 40px로 설정
+	       		$("a[href='https://naver.com']").css("font-size","40px");
+			//a요소 href속성  https://naver.com속성값
+			
+			//a요소 중에서 https://naver.com과 일치하지않는 모든 a요소를 선택하여 글자색을 red로 설정
+			$("a[href !='https://naver.com']").css("color","red");
+			//href!= 이거 붙이면 안됨 띄어쓰기 해야함 
+	        </script>
+	
+</body>
+</html>

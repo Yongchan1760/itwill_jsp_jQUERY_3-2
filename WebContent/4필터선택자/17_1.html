@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+	<script type="text/javascript" 
+	    	src="https://code.jquery.com/jquery-3.5.1.js">
+	</script>
+	
+	 <style type="text/css">
+	 	 div{
+	 	 	background: red;
+	 	 	width: 70px;
+	 	 	height: 70px;
+			margin: 0 3px;
+			float: left;
+	 	 }
+	 	 .toggleWidth{/* class속성값이 toggleWidth인 */
+	 		 width: 40px;
+	 	 }
+	 </style>
+	 
+	 <script type="text/javascript">
+	 	$(function(){
+	 			$("#run").click(function(){//클릭이 눌렸을때 실행된다. //3
+	 				$(":animated").toggleClass("toggleWidth");//4
+	 				//왔다갔다하는 애니메이션중에서  토글이라는 클래스 "toggleWidth"를 추가해줘 근데
+	 				//저 토글 위드가 40px이기에 런 실행이 눌릴떄마다 크기가 움직이다.
+	 			});
+	 		
+	 		function animateIt(){	//2
+	 				$("#ani").slideToggle("slow ", animateIt)
+	 				//아래있는 ani div요소를 가져와서 아래 위 왔다갔다하는 걸 만들고 나서 다시 자기 함수를 호출한다.
+	 				//그 와중에 클릭이 눌렸을때
+	 		}
+	 		animateIt();//1
+	 	});
+
+	 </script>
+	 
+	 
+</head>
+<body>
+		<button id="run">Run</button>
+		<div></div>
+		<div id="ani" ></div>
+		<!-- <div id="ani" class=toggleWidth></div> -->
+		<div ></div>
+</body>
+</html>

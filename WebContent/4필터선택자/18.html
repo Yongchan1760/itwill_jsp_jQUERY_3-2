@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+	<script type="text/javascript" 
+	    	src="https://code.jquery.com/jquery-3.5.1.js">
+	</script>
+		<!-- 
+			:eq(index위치값) 필터 선택자란?
+			지정한 index위치값에 해당하는 요소를 선택해옴
+			음수값도 지정할수있다.
+			음수값을 지정하면 마지막 요소부터 거꾸로 카운트 된다.
+			기본적으로 index위치값은 0부터 시작된다.
+			
+			예제) 
+			table 태그 내에있는 세번쨰 td요소와 마지막 td요소를 선택해와서
+			배경색을 green으로 설정 
+	 	--> 
+	 	
+	 	<script type="text/javascript">
+	 		$(function(){
+	 			//index위치값이 2인 td태그를 선택해서 배경색을 green으로 설정
+	 			//인덱스 위치값은 0부터 시작하기 떄문에 인덱스 위치값이 2인요소는 3번쨰 td가된다.
+	 			$("td:eq(2)").css("background-color","green");
+	 			//$("td:eq(2)"); 모든 td를 배열에 저장해서  들고와서 인덱스 2인 요소들만 필터해서 걸러옵니다.
+	 			$("td:eq(8)").css("background-color","pink");
+	 			//$("td:eq(-1)").css("background-color","pink");
+	 			// 꺼꾸로 탐색을 할수도있다 마지막 인덱스 번호는 -1부터 시작 위 아래는 같다.
+	 			//인덱스 위치값이 -1인 td태그의 배경색을 green으로 설정
+	 			//인덱스 위치값을 음수값으로 넣으면 마지막 td 태그부터 거꾸로 탐색하여 -1은 마지막 
+	 			//td요소의 인덱스 위치이다. eq 인덱스 위치값을 이용해서 필터 :로 걸러내자 ~
+	 			$("td:eq(-6)").css("background-color","yellow");
+	 			//$("input:eq(3)")
+	 			//만약 input 요쇼가 10개다 그럼 다 배열에 담아와서 그중 인덱스 번호가 3인 애들 필터해라 그런말
+	 			
+	 		});
+	 	
+	 	</script>
+</head>
+<body>
+	<table border="1">
+		<tr> 
+			<td>ID #0</td>
+			<td>ID #1</td>
+			<td>ID #2</td>
+		 </tr>
+		 <tr> 
+			<td>ID #3</td>
+			<td>ID #4</td>
+			<td>ID #5</td>
+		 </tr>
+		 <tr> 
+			<td>ID #6</td>
+			<td>ID #7</td>
+			<td>ID #8</td>
+		 </tr>
+	</table>
+</body>
+</html>

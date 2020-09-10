@@ -6,8 +6,38 @@
 	<script type="text/javascript" 
 	    	src="https://code.jquery.com/jquery-3.5.1.js"></script>
 	        <!-- code.jquery 사이트 를 접속해서  jquery-3.5.1.js를 불러.옴 -->
+	        
+	       <!-- 
+	        		제이쿼리 속성 선택자 종류  has attribute selector 선택자란?
+	        		:html dom태그중에서 속성이름을 이용해서 요소를 선택할수있다.
+	        		:속성 이름을 지정하는 경우에는 "selector[속성명]" 표현식을 사용한다 
+	        		h1[id] h1 속성중에 id인 애들만 데리고온다
+	        		
+	        		사용법 
+			 $("selector[attr]")  
+			  $("div[attr]")   디브 요소중에서 id속성을 가진애들 데려온다
+			 $("[attr]")  모든 요소중에 저 id를 가진것을 가져온다.
+	        : html dom을 구성하는 모든 html태그에서 지정된 attr속성 이름을 갖는 태그요소를 선택해서 반환
+	        
+	        따라서 
+	        <div id="hey">아이템2</div>
+			<div id="there">아이템3</div>를 선택해서 가져와 글자크기를 30px로 설정
+	        -->
+	        <script type="text/javascript">
+	         	$(function(){
+	         		
+	         		$("div[id]").css("font-size","30px")
+	         	});
+	         	
+	        
+	        
+	        </script>
+	        
 </head>
 <body>
-	
+	<div>아이템1</div>
+	<div id="hey">아이템2</div>
+	<div id="there">아이템3</div>
+	<div>아이템4</div>
 </body>
 </html>
