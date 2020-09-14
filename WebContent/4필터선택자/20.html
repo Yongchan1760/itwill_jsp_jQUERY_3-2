@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+	<script type="text/javascript" 
+	    	src="https://code.jquery.com/jquery-3.5.1.js">
+	</script>
+	
+	<!-- 
+		:first 필터 선택자
+		-첫번째 요소를 선택해옴
+		
+		:last 필터 선택자
+		-마지막 요소를 선택해옴
+		
+		
+	 -->
+	 <script type="text/javascript">
+	 	$(function(){
+	 		//tr태그 중에서 첫번째 요소를 선택하여 배경색을 변경합니다
+	 		$("tr:first").css("background-color","#bbf");
+	 		//tr태그 중에서 마지막 요소를 선택하여 글꼴 스타일을 이탤릴체로 변경
+	 		$("tr:last").css("font-style","italic")
+	 	});
+	 	
+	 </script>
+</head>
+<body>
+	<table border="1">
+		<tr>
+			<td>인덱스0</td>
+		</tr>
+		<tr>
+			<td>인덱스1</td>
+		</tr>
+		<tr>
+			<td>인덱스2</td>
+		</tr>
+		<tr>
+			<td>인덱스3</td>
+		</tr>
+	</table>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+	<script type="text/javascript" 
+	    	src="jquery-3.5.1.min.js">
+	</script>
+	<!-- 
+			:selected 필터 선택자 
+			이 선택자는 select 태그의 하위 태그로 사용하는 option태그중에서 선택된 요소를 반환함
+			input 태그의 type속성값이 checkbox이거나 radio인경우는 동작하지않고, 오직
+			select 태그에서만 동작하기 떄문에 주의 해야함
+			
+			주제: select 태그 내부에서 선택한 option의 텍스트값을 얻어 출력 
+	
+	 -->
+	 <script type="text/javascript">
+	 	$(function(){
+	 		//select 태그를 선택해서  change이벤트를 등록한다.
+	 		//셀렉트 태그의 하위 항목인 옵션 태그를 선택하면 선택된 옵션 요소의 텍스트 노드값을 얻어 저장
+	 		$("select").change(function() {
+	 			var date=$(":selected").text();
+	 			//data변수에 저장된 값을 span요소의 텍스트 위치에 설정
+	 			$("span").text(date);
+	 		});//선택 다른 것을 선택할떄 이벤트가 발생함 
+	 	});
+	 </script>
+</head>
+<body>
+	<form>
+		<select name="phone">
+			<option>010</option>
+			<option selected="selected">011</option>
+			<option>02</option>
+		</select>
+	</form>
+	선택된값 : <span></span>
+</body>
+</html>

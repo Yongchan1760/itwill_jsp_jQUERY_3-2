@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+	<script type="text/javascript" 
+	    	src="jquery-3.5.1.min.js">
+	</script>
+	<!-- 
+		: checkbox, :checked 필터 선택자
+		- :checkbox 필터 선택자는  input 태그중에서 type속성값이 checkbox인 요소만 선택함 
+		//따라서 $(":checkbox") 표현식은 ? $("[type='checkbox']")	 표현식과 동일하며
+		일반적으로 input태그에서 사용되기 떄문에 $(input:checkbox) 표현식을 주로 사용한다.
+		
+		-:checked 필터 선택자는 속성값이 checked 또는 selected된 요소를 선택해 옴.
+		:checked 필터 선택자는 input 태그중에서 type이 checkbox또는 radio이거나 
+		select option태그에 사용되고
+		앞으로 배울 :selected 필터 선택자는 select option태그에만 사용됨
+		
+		주제 :모든 checkbox를 선택해 border스타일을 적용하고 실제로 체크된 checkbox의 value속성값을 얻어 출력하는 예제
+		
+	 -->
+	 <script type="text/javascript">
+	 	$(function(){
+	 		//input 태그중에서 type 속성값이 checkbox인 태그를 선택하여 
+	 		//선택한 input요소에 span태그를 동적으로 만들어서 추가한다 (감싸면서 추가한다.)
+	 		// wrap()함수는 지정된 요소인 input태그에 인자로 주어진 span태그를 감싸서 추가하는 역할을 하고, 
+	 		//parent() 함수는 지정된 요소인 input태그의 부모 요소 (추가된 span)을 참조 선택한다.
+	 		//span 요소에 css스타일을 적용시키자.
+	 		$("input:checkbox").wrap("<span></span>").parent().css("border","3px dotted red")
+	 		
+	 		// input태그의 type속성값이 text인 요소를 선택하여  그 요소에 ???
+	 		//input 태그 중에서 type속성값이 checkbox이면서 check 된 요소의 value속성값을 얻어 
+	 		//설정한다.
+	 		//$("input[type='text']").val($(":checked").val());
+	 		$("input:text").val($(":checked").val());
+	 		
+	 	});
+	 </script>
+</head>
+<body>
+	<form>
+		사과<input type="checkbox" value="사과" checked="checked"> <br>
+		배 <input type="checkbox" value="배"> <br>
+		바나나 <input type="checkbox" value="바나나"> <br>
+		<input type="text">
+ 	</form>
+</body>
+</html>

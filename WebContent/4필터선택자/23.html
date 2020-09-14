@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+	<script type="text/javascript" 
+	    	src="https://code.jquery.com/jquery-3.5.1.js">
+	</script>
+	<!-- 
+	
+	
+	 -->
+	 
+	<script type="text/javascript">
+	$(function (){
+		$("input").click(function(){
+			//input태그중에서 focus이벤트가 발생된 요소를 선택해서 배경색을 노란색으로 변경함.
+			$("input:focus").css("background-color","yellow");
+			// input태그중에 focus되지않은 요소들을 선택해서 가져와서
+			//포커스를 받을떄 동적으로 지정된 style속성을 제거한다.
+			$("input:not(:focus)").removeAttr("style");
+			//$("input:not(:focus)").removeAttr("value");
+		});
+		//input요소들을 선택해서 가져와서 클릭 이벤트를 등록하여 사용자가 input요소를 클릭했을때
+		
+	});
+	
+	</script>
+</head>
+<body>
+	<div>
+		<input type="text" value="one">
+		<input type="text" value="two">
+		<input type="text" value="three">
+	</div>
+</body>
+</html>
