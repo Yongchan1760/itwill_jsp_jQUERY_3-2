@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+	<script type="text/javascript" 
+	    	src="jquery-3.5.1.min.js">
+	</script>
+	<!-- 
+		제어쿼리의 속성관련 메소드: api 주소 ->https://api.jquery.com/category/attributes/
+		
+		.attr(속성명) 메소드  attr src
+		->지정된 속성명에 해당하는 속성의 값을 반환. 일치하는 요소가 맞으면, 처음 일치하는 요소가 반환된다.
+		
+		.attr(속성명,속성값) 메소드 attr(src, a) 
+		->지정된 속성명에 속성값을 설정하는 메소드  
+		따라서 태그의 특정 속성값을 가져오기 위해서는 .attr(속성명) 메소드를 사용하고.
+		속성값을 설정하기 위해서는 .attr(속성명,속성값) 메소드를 사용한다.
+		<img src="이미지파일이 존재하는 경로"/> src속성에 해당하는 값을 가져온다.
+		
+	 -->
+	<script type="text/javascript">
+		//주제 버튼을 클릭했을때 기준img 태그의 속성인 src, width ,height의 값을 변경
+		//새로운 이미지를 화면에 보여주는 예제
+		$(function(){
+			$("button").click(function(){
+				//버튼을 클릭했을때 img태그를  korea.png로 변경하고 width 와 높이를 각각 200으로 변경한다.
+				$("img").attr({
+							src:"korea.png", /* json 여러개 속성을 설정할떄 이렇게 한다. */
+							width:200,
+							height:200
+							});			
+				});
+			//img 태그의 속성 src에 해당하는 속성값을 얻어 console탭에 로그 출력
+			var a=$("img").attr("src");
+			console.log(a);
+			
+			
+			
+			});
+		
+	</script>
+</head>
+<body>
+	<img src="france.png" width="100" height="100"/>
+	<button>이미지 변경</button>
+</body>
+</html>

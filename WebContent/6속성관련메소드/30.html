@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+	<!--jquery install-->
+	<script src="https://code.jquery.com/jquery-3.5.1.js"> </script>
+	<!-- 
+		//.removeATTR (제거시킬 속성명
+		//. 지정된 속셩명과 일치하는 모든 속성을 제거한다
+		
+		주제ㅣ 전체 해제 버튼을 클릭할떄 선택되어있던 모든 체크박스의 체크를 해제하고 
+		반대로 전체선택 버튼을 클릭하면 해제되어있던 모든 체크박스에 체크가 되도록 하는 예제.
+	 -->
+	<script>
+		$(function(){
+			//id 속성값이 alluncheckd인 버튼요소를 선택하여 버튼 요소에 클릭 이벤트 행위를 등록
+			 $("#alluncheck").on("click",function(){//on 클릭하는것 외에 마우스를 올리거나근처에 갔을떄 시행되게 할수있다.
+				 $("input").removeAttr("checked"); 
+				 /* $("input").removeAttr("checked"); */
+					/* $("#alluncheck").on("등록할 이벤트종류명 등록할 이벤트종류명2 등록할 이벤트종류명3",이벤트가 발생하면 처리할 함수); */
+				 /* $("#alluncheck").on("click mouseover mouseout blur",function(){}); */
+			 }); 
+			//전체 선택 버튼을 클릭했을떄 체크 해제되어잌ㅆ던 모든 것들이 체크되게 설정하다.
+			$("#allcheck").on("click",function(){
+				$("input").attr("checked","checked");
+				//해제되었던 checkbox에 checked 속성을 설정하기 위해
+				//.attr("설정한 속성명","속성명에 대한 설정할값") 메소드를 사용한다.
+				/* var names=$("input[name='banana']").attr("name");
+				console.log(names); */
+			});
+		});
+	</script>
+	
+</head>
+<body>
+	<button id="alluncheck">전체해제</button> <br>
+	<button id="allcheck">전체선택</button> <br>
+	사과 <input type="checkbox" name="apple" checked="checked"> <br><!-- type 모양 ,name 이름 , checked는 상태 -->
+	바나나 <input type="checkbox" name="banana" checked="checked"> <br>
+	오렌지 <input type="checkbox" name="orange" checked="checked"> <br>
+</body>
+</html>

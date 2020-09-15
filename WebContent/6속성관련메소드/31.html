@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+	<!--jquery install-->
+	<script src="https://code.jquery.com/jquery-3.5.1.js"> </script>
+	<!-- 
+		.val()메소드 : <input> ,<select> , <textarea> 등과 같은 <form> 요소 내부에
+		사용되는 태그의 값을 가져올떄 사용됨
+		
+		.val(값) 메소드 : 해당 html태그에 val 속성의 값을 설정할떄 사용함.
+		
+		//참고 :일반적으로 선택되거나 체크된 요소를 선택하기 위해서는 :
+		selected 또는 checked선택지와 같이 사용함 
+	 -->
+	<script>
+		$(function(){
+			/* 버튼 복사 버튼을 선택해서 클릭이벤트를 등록하여 사용자가 버튼을 클릭하면 
+			id속성값이 source인 input요소에 입력한 값을 가져와 text변수에 저장하고
+			text변수에 저장된 값을 id속성값이 target input요소에 value속성값으로 설정하자. */
+			$("button").click(function(){
+				var text=$("input").val();
+				$("#target").val(text);
+			});
+		});
+	</script>
+</head>
+<body>
+ 	입력 :<input type="text" id="source"> <br>
+ 	<button>복사</button> <br>
+ 	출력: <input type="text" id="target"> <br>
+ 	
+</body>
+</html>
