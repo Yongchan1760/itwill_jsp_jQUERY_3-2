@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+	<!--jquery install-->
+	<script src="https://code.jquery.com/jquery-3.5.1.js"> </script>
+	<!-- 
+		지정한 index위치값과 일치하는 위치의 li태그에 해당하는 text값을 얻어 출력
+		index값을 지정하지 않고 모든 li태그를 선택해 text값을 얻어 출력 
+		$("li").get(인덱스 위치값)->get(0)
+	 -->
+	<script>
+		$(function(){
+			//li태그 중에서 첫번쨰 li태그만 선택하기 위해
+			//get(index)메소드를 이용하여 index값 0을 지정하여 
+			//li홍길동 li 선택해오고 홍길동 텍스트 값을 얻기위해
+			//모든 html객체들의 속성인 innerhtml속성을 호출한다.
+			$("li").get(0).innerHTML;
+			console.log($("li").get(0).innerHTML);
+			
+			//모든 li요소들을 얻기 위햐여 index 위치값을 전달 하지않는 get()메소드를 호출하자
+			var all=$("li").get();
+			console.log(all);
+			//for문을 사용하여 각 li요소들을 얻어 li요소 내부에 있는 텍스트 값을 최종 얻어 출력
+			var i;
+			for(i=0;i<all.length;i++){
+				console.log(all[i].innerHTML);//.innerHTML 됨//.text() 안됨
+				//console.log($("li").get(i).innerHTML);
+			}
+		});
+	</script>
+</head>
+<body>
+	<ul> 
+		<li>홍길동</li>
+		<li>이순신</li>
+		<li>유관순</li>
+	</ul>
+</body>
+</html>

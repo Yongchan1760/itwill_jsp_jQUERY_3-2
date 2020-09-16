@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+	<!--jquery install-->
+	<script src="https://code.jquery.com/jquery-3.5.1.js"> </script>
+	<!-- 
+		fadeout() 노출되어있던 요소가 점점 투명해 지면서 숨겨지게 하는 메소드
+		fadein() 숨겨져있던 요소가 점점 선명해 지면서 노출되게 하는 메소드 
+		fadetoggle(): 노출되어있던 요소는 점점 투명해지면서 숨겨지게하고,
+					숨겨져있던 요소는 점점 선명해지면서 다시 노출되게 하는 메소드
+					
+	 -->
+	<script>
+		$(function(){
+			$("#btn1").on("click", function(){
+				//h1요소가 1초만에 점점 투명해지면서 숨겨지게하기 
+				$("h1").fadeOut(1000);
+			});
+			$("#btn2").on("click", function(){
+				//h1요소가 3초만에 점점 선명해지면서 나타나게 하기
+				$("h1").fadeIn(3000);
+			});
+			$("#btn3").on("click", function(){
+				//h1요소가 토글버튼을 클릭할때마다 숨겨져있던 h1요소는 점점 선명해지면서
+			//나타나게 하고 효과속도 :fast 노출되어있던 h1요소는 점점 투명해지면서 
+			// 숨겨지게 하기 효과속도는 :fast
+				$("h1").fadeToggle("fast");
+			});
+			// fadeTo()메소드 노출되어있던 요소에 투명도를 지정한 만큼 숨깁니다.
+			//0~1사이값 입력가능 숫자에 1이 가까울수록 선명하게 보임.
+			//가령 50%만 투명도를 적용하려면 0.5를 입력하면 된다.
+			
+			//투명도(30%) 버튼을 클릭했을떄
+				//h1 요소를 선택해 h1을 30%만 노출 
+			$("#btn4").click(function(){
+				$("h1").fadeTo("slow",0.3);
+			});
+			//투명도 (100%) 버튼을 클릭했을떄
+				//h1 요소를 선택해 h1을 100%만 노출 
+			$("#btn5").click(function(){
+				$("h1").fadeTo("slow",1);
+			});
+		});
+	</script>
+</head>
+<body>
+	<button id="btn1">fadeOut</button>
+	<button id="btn2">fadeIn</button>
+	<button id="btn3">fadeToggle</button>
+	<button id="btn4">투명도(30%)</button>
+	<button id="btn5">투명도(100%)</button>
+	<h1>내용</h1>
+</body>
+</html>

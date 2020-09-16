@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+	<!--jquery install-->
+	<script src="https://code.jquery.com/jquery-3.5.1.js"> </script>
+		<!-- 
+			 유틸리티 관련 메소드란?
+			 jquery를 이용하여 코드를 작성할떄 배열을 순회하거나, 배열을 필터링 하거나 또는 
+			 배열 형식으로 변경하거나, 배열 복제, 데이터의 공백 제거, .xml파일 및 .json파일이 
+			 파싱처리 방법과 같은 프로그램을 개발할떄 효율적으로 사용가능한 유틸리티 메소드를 말함.
+			
+			jquery에서 제공하는 유틸리티 관련 메소드 종류 
+			1. jquery.each(object, function) 메소드 : 반복문과 비슷하다. 
+			배열및 map형태의 반복되는 데이터를 순회하면서 데이터를 얻어올수있다.
+			function내에서 false를 반환하여 반복 순회를 중시한다.
+			
+			5개의 문자열이 저장된 배열과 5개의 key/value형식을 저장된 json객체 데이터를
+			jQuery.each()메소드를 사용하여 순회하면서 데이터를 얻어 콘솔이 출력하는 예제.
+		 -->
+	<script>
+		$(function(){
+			//5개의 문자열 데이터를 가진 배열을 생성한다.
+			var arr=["one","two","three","four","five"];
+			jQuery.each(arr, function(idx,obj){
+				console.log("index:"+idx+"\t value:"+obj);
+				
+			});
+				 /* o번째 인덱스가 저장되고 one이라는 값이 obj에 저장
+				배열을 순회하면서 데이터를 얻어 출력하기 위하여 jqeury.each()메소드를 사용함 
+				jqeury.each(순회할 배열, function(배열의 인덱스 위치값 ,번째 인덱스 위치값의 데이터)
+				 첫번째 인자에는 배열을 지정하고, 두번쨰 인자에는 함수 function을 지정한다.
+				 function 첫번쨰 인자인 idx는 배열의 index값으로 0부터 전달을 받고,
+				function의 두번째 인자인 obj는 index위치값에 해당하는 실제 데이터를 전달 받는다. */
+				
+				var m={one:1,two:2,three:3,four:4,five:5};// 변수, 값
+				//첫번쨰 인자에는 json 객체인 m을 지정하고 두번쨰 인자에는 펑션 함수가 들어갔다
+				// function 첫번째 인자 key는 첫번째 m json객체의 key값을 전달받고 
+				//function의 두번쨰 인자에는 obj는 key에 해당하는 값을 전달 받는다.
+				 jQuery.each(m, function(key, obj) {// one, 1
+					 console.log("index:"+key+"\t value:"+obj);
+				}); 
+				/* .json 파일에서 객체를 생성할떄 {속성명(key):속성값 (value),속성명(key):속성값 (value)}
+				{속성명(key):속성값 (value),속성명(key):속성값 (value)} json 객체라고한다 
+				{}하나의 객체 {변수이름:값,변수이름:값,변수이름:값} 변수이름 =속성명   값=속성값=배열값([1,2,3,]) */
+		});
+	</script>
+</head>
+<body>
+
+</body>
+</html>

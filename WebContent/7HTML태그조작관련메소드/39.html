@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+	<!--jquery install-->
+	<script src="https://code.jquery.com/jquery-3.5.1.js"> </script>
+		<!-- 
+			.clone() 메소드
+			선택된 요소를 복제한다.
+			이떄 복제되는 요소는? 모든 하위 요소까지도 포함된다.
+			
+		
+		 -->
+	<script>
+		$(function(){
+			/* class 속성값이 hello인 div class hello 이순신을 복제하여 
+			class 속성값이 goodbye인 div class goodbye 요소 내부로 보낸다. */
+			$(".hello").clone().appendTo(".goodbye");
+		});
+	</script>
+</head>
+<body>
+	<div class="container">
+		<div class="goodbye">
+			홍길동
+			<div class="hello">이순신</div> 
+		</div>
+	</div>
+</body>
+</html>
