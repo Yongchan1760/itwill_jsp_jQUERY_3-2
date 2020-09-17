@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+	<!--jquery install-->
+	<script src="https://code.jquery.com/jquery-3.5.1.js"> </script>
+		<!-- 
+			stop():현재 실행중인 동작을 모두 정지 시킵니다.
+			예) 오른쪽으로 이동중인 요소에 버튼을 눌러 강제로 정지 시킬수있다.
+			문법
+			$(요소선택).stop();
+			해석 : 선택한 요소에 동작중인 효과또는 애니메시연 강제 정지
+			
+			delay(): 선택한 요소에 효과또는 애니메이션 실행 할때 시작되는 시간을 지연시킨다.
+			문법
+			$(요소선택).delay(지연할시간).효과메소드();
+			해석: 선택한 요소에 효과 또는 애니메이션의 실행시작을 지연시킵니다.
+		 -->
+	<script>
+		$(function(){
+			/* h1요소에 애니메이트 메소드 적용
+			h1요소를 marginLeft 속성에 250px값을 주어 h1요소의 왼쪽 바깥여백을 250 3초뛰우자
+			$("h1").animate({marginLeft:"250px"},3000);
+			
+			h1요소에 애니메이트 메소드 적용
+			 h2요소를 marginLeft 속성에 250px값을 주어 h1요소의 왼쪽 바깥여백을 250 3초뛰우자
+			$("h2").animate({marginLeft:"250px"},3000);
+			
+			h3요소에 애니메이트 메소드 적용
+			 h3요소를 marginLeft 속성에 250px값을 주어 h1요소의 왼쪽 바깥여백을 250 3초뛰우자
+			h3요소에 동작이 1초 지연후 실행되게하자
+			$("h3").delay(1000).animate({marginLeft:"250px"},3000);
+			
+			stop 버튼을 클릭했을때... h1요소 모션 정지
+			$("#stopbtn").on("click",(function(){
+				$("h1").stop();
+			})); */
+			
+			
+			/* h2요소를 선택해 2초만에 300px만큼 왼쪽 바깥여백을 주어 앞으로 전진 되게 동작효과를 주고
+			3초만에 300px만큼 위쪽 바깥여백을 주어 아래로 내려가는 동작효과를 주자. */
+			$("h2").animate({marginLeft:"300px"},2000).animate({marginTop:"300px"},3000)
+			.animate({marginLeft:"0px"},4000)
+			.animate({marginTop:"0px"},3000);
+			
+		});
+	</script>
+	<style type="text/css">
+			h1{
+				width:50px;
+				height:30px;
+				background-color:red;
+				font-size: 100%;
+			}
+			h2{
+				width:50px;
+				height:30px;
+				background-color:orange;
+				font-size: 100%;
+			}
+	</style>
+</head>
+<body>
+	<button id="stopbtn">stop</button>
+	<h1>내용</h1>
+	<h2>내용</h2>
+</body>
+</html>

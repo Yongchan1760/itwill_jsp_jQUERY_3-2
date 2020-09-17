@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+	<!--jquery install-->
+	<script src="https://code.jquery.com/jquery-3.5.1.js"> </script>
+	<!-- 
+		.trigger(이벤트 타입,파라미터)메소드
+		-이벤트가 발생할때 실행될 함수나. on()메소드로 연결된 어떤 이벤트 처리 함수를 강제로 실행하는 메소드\
+		따라서 .trigger메소드는 사용하면 사용자가 실행시키는 이벤트에 순서를 지정해서 실행할수있다.
+		-이벤트 타입은 dom이벤트를 표현하는 문자열로 "click", "submit"등을 설정할수있다.
+		-파라미터는 이벤트 처리함수에 전달하기 위한 데이터로써 생략할수있다.
+		주제: button을 강제로 클릭하지 않고도, .trigger()메소드를 사용하여 버튼을 클릭한 효과를
+		구현한 예제 
+	 -->
+	<script>
+		$(function(){
+			//id속성값이 foo인 버튼을 선택해서 클릭했을때 
+			$("#foo").on("click",function(){
+				//클릭이벤트가 발생당한? button요소를 선택해서 텍스트값을 얻어
+				console.log($(this).text() );
+			});
+			//id속성값이 foo인 버튼에 등록된 click이벤트 처리를 강제로 실행하게 한다.
+			$("#foo").trigger("click");
+			//크롬 웹브라우저를 실행한후 f12를 눌루 console탭에 출력된 내용를 확인하자
+			// 실행결과 버튼을 명시적으로 클릭하지 않아도 trigger()메소드에 의해 강제로 버튼을 클릭한 효과를 얻을수있다.
+			
+		});
+	</script>
+</head>
+<body>
+	<button id="foo">press</button>
+</body>
+</html>

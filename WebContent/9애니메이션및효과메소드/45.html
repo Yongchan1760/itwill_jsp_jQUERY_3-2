@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+	<!--jquery install-->
+	<script src="https://code.jquery.com/jquery-3.5.1.js"> 
+	</script>
+	<!--  
+	animate()메소드
+	선택한 요소에 동작 효과를 적용시킨다. 
+	가령, 요소를 앞으로 전진 시키거나 점차 커지게 하는 다양한 동작을 적용 할수있습니다.
+	기본 문법 : 
+	$(요소 선택).animate({애니메이션 관련 속성},"효과속도",콜백함수) 제이슨 형태로 전송
+	해석1.{애니메이션 관련 속성} 에는 모션(동작)으로 적용할 속성값을 css을 이용해서 입력합니다.
+	해석2. 효과속도는 동작하는 속도를 가리키며, 값으로는 앞서 배운 효과와 같이 slow, normal,fast
+	또는 밀리초로 입력할수있다.
+	해석3. 콜백함수는 동작이 완료되면 실행되는 함수. 생략 가능함.
+	  -->
+	<script>
+	 $(function(){
+		 //h1요소를 선택해서 animate메소드를 적용 
+		 //5초만에 왼쪽 바깥여백을 250px만큼 띄어 앞으로 전진되는 동작을 적용 
+		$("h1").on("click",function(){
+			$("h1").animate(
+			{
+				marginLeft: "250px"
+			},
+			5000,
+			function(){alert("도착완료")}
+			);
+		});
+		
+		 //h2요소를 선택해서 animate 적용
+		 //5초만에 왼쪽 바깥여백을 250띄어 앞으로 전진되게하고.
+		 //h2 요소의 너비를 100만큼 커지게하고 투명도 30-
+		$("h2").on("click",function(){
+			$("h2").animate(
+					{
+						marginLeft:"250px", width:"100px", opacity:"0.3"
+					},
+					5000
+					);
+		});
+		 
+		 // h3요소에 체이닝기법으로 적용
+		 //3초만에 왼쪽 바깥여백을 250px만큼 띄어 앞으로 전진하고, 
+		 //2초만에 바깥여백을 150만큼 뛰어 앞으로 전진되게-->
+		 $("h3")
+		 .animate(
+			{
+				marginLeft:"250px"
+			},
+			3000
+		 )
+		 .animate(
+			{
+			 marginLeft:"150px"
+			 },
+			 2000
+			);
+	 });
+	</script>
+		<style type="text/css">
+			h1{
+				width:50px;
+				height:30px;
+				background-color:red;
+				font-size: 100%;
+			}
+			h2{
+				width:50px;
+				height:30px;
+				background-color:orange;
+				font-size: 100%;
+			}
+			h3{
+				width:50px;
+				height:30px;
+				background-color:Aqua;
+				font-size: 100%;
+			}
+		</style>
+</head>
+<body>
+	<h1>내용</h1><!-- 5초만에 왼쪽 바깥여백을 250px만큼 띄어 앞으로 전진되는 동작을 적용 -->
+	<h2>내용</h2><!-- 5초만에 왼쪽 바깥여백을 250px만큼 띄어 앞으로 전진되게하고 h1요소의 너비를 100px만큼 커지게하고,투명도30 -->
+	<h3>내용</h3><!-- 3초만에 왼쪽 바깥여백을 250px만큼 띄어 앞으로 전진하고,  2초만에 바깥여백을 150만큼 뛰어 앞으로 전진되게-->
+</body>
+</html>
